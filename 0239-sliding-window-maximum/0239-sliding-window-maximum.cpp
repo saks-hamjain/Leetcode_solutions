@@ -4,7 +4,7 @@ public:
     {
         int n = nums.size();
         vector<int> res;
-        deque<int> dq(k);
+        deque<int> dq;
         
         for(int i =0;i<k;i++)
         {
@@ -25,6 +25,7 @@ public:
             dq.push_back(i);
             }
         }
+
         return res;
     }
 };
