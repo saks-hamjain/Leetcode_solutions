@@ -4,22 +4,16 @@ public:
     {
         int res = -1;
        unordered_map<char,int> mp;
-       queue<char> q;
        for(auto ch : s)
        {
           mp[ch]++;
-          q.push(ch);
        }   
-       while(!q.empty())
-       {
-         if(mp[q.front()] == 1)
-          break;
-
-          q.pop();
-       }
        
-       if(q.empty()) return -1;
+       for(int i=0;i<s.length();i++)
+       {
+         if(mp[s[i]] == 1) return i;
+       }
 
-       return s.find(q.front());
+       return -1;
     }
 };
